@@ -182,7 +182,7 @@ body {
     border: 1px solid #fff;
     border-radius: 15px;
     color: #fff;
-    width: 18px;
+    width: 185px;
     padding: 20px;
     font-size: 18px;
     font-weight: 600;
@@ -215,4 +215,4 @@ body {
     100% {
       background-position: 0% 50%;
     }
-  } }
+  }

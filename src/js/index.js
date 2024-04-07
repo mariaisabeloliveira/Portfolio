@@ -3,6 +3,10 @@ const projetosInativos = document.querySelectorAll('.projeto:not(.ativo)');
 const botaoMostrarMenos = document.querySelector('.btn-mostrar-menos');
 const projetosAtivos = document.querySelectorAll('.projeto')
 
+if (projetosAtivos.length > 4) {
+    mostrarBotaoMostrarProjetos();
+}
+
 botaoMostrarProjetos.addEventListener('click', () => {
     mostrarMaisProjetos();
     esconderBotao();
@@ -22,8 +26,8 @@ function mostrarMaisProjetos() {
     });
 }
 
-if (projetosAtivos.length>4) {
-    botaoMostrarProjetos.classList.remove('remover');
+function esconderBotao() {
+    botaoMostrarProjetos.classList.add('remover');
 }
 
 function esconderProjetos() {
@@ -34,14 +38,19 @@ function esconderProjetos() {
     }
 }
 
-function esconderMostrarMenos() {
-    botaoMostrarMenos.classList.add('remover')
-}
-
 function BotaoMostrarMenos() {
     botaoMostrarMenos.classList.remove('remover');
+}
+
+function esconderMostrarMenos() {
+    botaoMostrarMenos.classList.add('remover')
 }
 
 function mostrarBotaoMostrarProjetos() {
     botaoMostrarProjetos.classList.remove('remover');
 }
+
+botaoMais = Array.from(botaoMostrarProjetos.classList)
+botaoMenos = Array.from(botaoMostrarMenos.classList)
+
+console.log ('Mostrar mais:', botaoMais, 'Mostrar Menos: ', botaoMenos)
